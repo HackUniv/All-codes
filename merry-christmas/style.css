@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/caa2?family-Salsa&display=swap");
+
+body {
+    background: linear-gradient(#00144b, #000);
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+@keyframes snowing {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 110vh, 0);
+    }
+}
+
+.snow {
+    width: 1vw;
+    height: 1vw;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: -10vh;
+    filter: blur(1px);
+    left: calc(10vw * var(--i));
+    animation: snowing calc(1s * var(--i)) linear infinite;
+    animation-delay: -35s;
+}
+
+.star {
+    clip-path: polygon(50% 0, 61% 35%, 98% 35%,
+            68% 57%, 79% 91%, 50% 70%,
+            21% 91%, 50% 70%, 21% 91%,
+            32% 57%, 2% 35%, 39% 35%);
+    background-color: #ffff00;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+}
+
+.star1 {
+    position: absolute;
+    bottom: 350px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    filter: drop-shadow(0 0 15px rgb(247, 195, 55));
+}
+
+.g {
+
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(#fde2b0, #fff);
+    height: 100px;
+    width: 100vw;
+}
+
+.tree {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 180px;
+    height: 260px;
+    background: linear-gradient(to top, #533106,
+            #04802d, #098633,
+            #2fd35d,
+            hsl(133, 98%, 67%));
+    clip-path: polygon(50% 0,
+            70% 15%,
+            55% 10%,
+            85% 40%,
+            60% 25%,
+            90% 60%,
+            65% 45%,
+            100% 87%,
+            57% 80%,
+            57% 100%,
+            43% 100%,
+            43% 80%,
+            0 87%,
+            35% 45%,
+            10% 60%,
+            40% 25%,
+            15% 40%,
+            45% 10%,
+            30% 15%);
+    transform: rotateY(calc(21deg * var(--j)));
+}
+
+@keyframes anim {
+    to {
+        background-position-y: 120px;
+    }
+}
+
+h1 {
+    position: absolute;
+    bottom: 390px;
+    left: 450px;
+    width: 28%;
+    text-align: center;
+    background: radial-gradient(#000, #ff0000 50%);
+    font-size: 6vh;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 1px #ff0000;
+    font-family: "Salsa", cursive;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: anim 2s linear i;
+}
