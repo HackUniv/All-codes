@@ -1,0 +1,26 @@
+.like {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.main_container {
+    display: flex;
+    padding: 20px 40px;
+    width: 10%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.text_container {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
