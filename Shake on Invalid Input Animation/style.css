@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;900&display=swap");
+
+:root {
+	--primary: #191919;
+	--secondary: #f26db6;
+	--ternary: #310273;
+	--background: #f1f1f1;
+	--gray: #e1eeff7f;
+	--white: #fff;
+}
+
+body {
+	color: var(--font-color);
+	font-family: "Inter", sans-serif;
+	font-size: 1.2em;
+	line-height: 1.6;
+	background: var(--background);
+	overflow-x: hidden;
+	min-height: 100vh;
+	min-width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+input {
+	outline-style: none;
+	box-shadow: none;
+	border-color: 0000;
+	border-radius: 8px;
+	height: 52px;
+	font-size: 32px;
+}
+
+input:invalid {
+	animation: shake 300ms;
+	border: solid 1px red;
+}
+input:invalid::after {
+	content: "Error text input";
+	font-size: 28px;
+	color: red;
+}
+
+input:invalid + span::after {
+	content: "Invalid input";
+	color: red;
+	position: relative;
+	top: 8px;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+@keyframes shake {
+	25% {
+		transform: translateX(4px);
+	}
+	50% {
+		transform: translateX(-4px);
+	}
+	75% {
+		transform: translateX(4px);
+	}
+}
