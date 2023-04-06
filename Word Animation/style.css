@@ -1,0 +1,18 @@
+.container {
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-background-clip: text;
+    color: transparent;
+    width: 10vw;
+    background-image: url(./6.gif);
+    width: 100%;
+    background-size: contain;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    font-size: 16px;
+    line-height: 14px;
+    font-weight: bold;
+}
