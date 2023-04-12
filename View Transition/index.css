@@ -1,0 +1,109 @@
+:root {
+    --duration: 2.8s;
+}
+.old-page {
+    position: absolute;
+    inset: 0;
+    background: url("https://image.lexica.art/full_jpg/adef8690-4ab4-4e05-bab3-39710f2b1325?") center center no-repeat;
+    background-size: cover;
+    transform: scale(1.5);
+}
+@media (orientation: portrait) {
+    .old-page {
+        mask: url("https://assets.codepen.io/907471/tail.svg?v1") center top no-repeat, url("https://assets.codepen.io/907471/space.svg?v42") center center no-repeat, url("https://assets.codepen.io/907471/ncc1701.svg") center center no-repeat;
+        mask-repeat: no-repeat;
+        mask-size: 10rem 20rem, 300% 300%, 100% 30%;
+        animation: hide-view-portrait var(--duration) cubic-bezier(0.975, -0.005, 0, 1.02) infinite forwards;
+   }
+}
+@media (orientation: landscape) {
+    .old-page {
+        mask: url("https://assets.codepen.io/907471/tail.svg?v1") center top no-repeat, url("https://assets.codepen.io/907471/space-landscape.svg?v4") center center no-repeat, url("https://assets.codepen.io/907471/ncc1701.svg") center center no-repeat;
+        mask-repeat: no-repeat;
+        mask-size: 10rem 30rem, 500% 500%, 100% 30%;
+        animation: hide-view-landscape var(--duration) cubic-bezier(0.975, -0.005, 0, 1.02) infinite forwards;
+   }
+}
+@media (orientation: landscape) and (max-height: 300px) {
+    .old-page {
+        mask-size: 10rem 10rem, 500% 500%, 100% 30%;
+   }
+}
+@keyframes hide-view-portrait {
+    from {
+        mask-position: 50% 120%, 50% 0%, 50% 150%;
+        transform: scale(1.5);
+   }
+    45% {
+        transform: scale(1);
+   }
+    50% {
+        mask-position: 50% 120%, 50% 80%, 50% 60%;
+   }
+    80% {
+        mask-position: 50% -60%, 50% 140%, 50% -70%;
+   }
+    to {
+        mask-position: 50% -60%, 50% 140%, 50% -70%;
+        transform: scale(1);
+   }
+}
+@keyframes hide-view-landscape {
+    from {
+        mask-position: 50% 120%, 50% 0%, 50% 150%;
+        transform: scale(1.5);
+   }
+    45% {
+        transform: scale(1);
+   }
+    50% {
+        mask-position: 50% 120%, 50% 72%, 50% 60%;
+   }
+    80% {
+        mask-position: 50% -80%, 50% 140%, 50% -70%;
+   }
+    to {
+        mask-position: 50% -80%, 50% 140%, 50% -70%;
+        transform: scale(1);
+   }
+}
+.new-page {
+    position: absolute;
+    inset: 0;
+    background: url("https://image.lexica.art/full_jpg/9c540582-ffa2-4645-894a-bfba5dadada7?") center center no-repeat, #111;
+    background-size: cover;
+    animation: show var(--duration) cubic-bezier(0.975, -0.005, 0, 1.02) infinite forwards;
+}
+@keyframes show {
+    from {
+        filter: saturate(0%);
+        opacity: 0.4;
+   }
+    40% {
+        filter: saturate(0%);
+        opacity: 0.4;
+   }
+    80% {
+        filter: saturate(100%);
+        opacity: 1;
+   }
+    to {
+        filter: saturate(100%);
+   }
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    color: #ca5600;
+    background: black;
+    overflow: hidden;
+}
+.labs-follow-me {
+    transform: scale(0.8) !important;
+}
+@media screen and (max-height: 800px) {
+    :root {
+        font-size: 8px;
+   }
+}
