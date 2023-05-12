@@ -1,0 +1,29 @@
+<svg width="0" height="0">
+    <symbol id="lamp" viewBox="0 0 600 500">
+      <radialGradient id="light" cx="100" cy="10" fx="112" fy="75" r="470" gradientUnits="userSpaceOnUse">
+        <stop style="stop-color:#ffd;stop-opacity:0.6" offset="0" />
+        <stop style="stop-color:#ff8;stop-opacity:0" offset="1" />
+      </radialGradient>
+      <path style="fill:none;stroke:#784421;stroke-width:2;d:var(--line-d)" />
+      <circle style="fill:#f00;cy:var(--pommel-cy)" cx="40" r="5" />
+      <circle cx="40" cy="90" r="20" fill="#55747d" />
+      <g transform="rotate(-45,40,90)">
+        <rect width="55" height="10" x="35" y="85" />
+        <rect width="10" height="3" x="35" y="81" />
+        <rect width="10" height="3" x="35" y="96" />
+      </g>
+      <path style="fill:var(--glow-fill);pointer-events:none" d="M 90,90 175,500 H 600 V 190 L 140,65" />
+      <circle style="fill:var(--bulb-fill)" cx="112" cy="75" r="10" />
+      <path d="M 140,68 C 77,8 38,23 90,90 Z" fill="#e4f6fb" />
+    </symbol>
+  </svg>
+  <div class="container">
+  <section>
+  <label><input class="switch" type="checkbox"><svg class="lamp"><use href="#lamp" /></svg></label>
+  <img class="image" src="https://images.unsplash.com/photo-1578320340743-0314d3d66851?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1988&q=80">
+  </section>
+  <section>
+  <label><input class="switch" type="checkbox"><svg class="lamp"><use href="#lamp" /></svg></label>
+  <img class="image" src="https://images.unsplash.com/photo-1576503918400-0b982e6a98bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=473&q=80">
+  </section>
+  </div>

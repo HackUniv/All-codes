@@ -1,0 +1,54 @@
+body {
+    background: #28282B;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-item: center;
+    justify-content: center;
+    ;
+  }
+  .image{
+    height: 265px;
+  }
+  section {
+    position: relative;
+    width: 450px;
+    height: 345px;
+    flex: 0 0 450px;
+  }
+  section .switch {
+    display: none;
+  }
+  section .lamp {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    --line-d: path('M40,105V240');
+    --pommel-cy: 240px;
+    --bulb-fill: #ccc;
+    --glow-fill: none;
+  }
+  section .lamp use {
+    cursor: pointer;
+  }
+  .switch:checked + .lamp {
+    --line-d: path('M40,105V280');
+    --pommel-cy: 280px;
+    --bulb-fill: #ff0;
+    --glow-fill: url(#light);
+  }
+  section img {
+    position: absolute;
+    top: 115px;
+    left: 130px;
+    width: 225px;
+    filter: brightness(30%);
+  }
+  section:has(:checked) img {
+    filter: drop-shadow(5px 5px 3px black);
+  }
