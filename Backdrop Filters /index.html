@@ -1,0 +1,90 @@
+<header class="Header">
+  <div>
+    <input id="FilterBlur" name="FilterBlur" type="checkbox" data-filter-name="blur" checked/>
+    <label for="FilterBlur">Blur</label>
+  </div>
+  <div>
+    <input id="FilterBrightness" name="FilterBrightness" type="checkbox" data-filter-name="brightness"/>
+    <label for="FilterBrightness">Brightness</label>
+  </div>
+  <div>
+    <input id="FilterContrast" name="FilterContrast" type="checkbox" data-filter-name="contrast"/>
+    <label for="FilterContrast">Contrast</label>
+  </div>
+  <div>
+    <input id="FilterGrayscale" name="FilterGrayscale" type="checkbox" data-filter-name="grayscale"/>
+    <label for="FilterGrayscale">Grayscale</label>
+  </div>
+  <div>
+    <input id="FilterHueRotate" name="FilterHueRotate" type="checkbox" data-filter-name="hue-rotate"/>
+    <label for="FilterHueRotate">Hue-rotate</label>
+  </div>
+  <div>
+    <input id="FilterSaturate" name="FilterSaturate" type="checkbox" data-filter-name="saturate"/>
+    <label for="FilterSaturate">Saturate</label>
+  </div>
+  <div>
+    <input id="FilterInvert" name="FilterInvert" type="checkbox" data-filter-name="invert"/>
+    <label for="FilterInvert">Invert</label>
+  </div>
+</header>
+<main>
+<div class="Container">
+  <div class="Filter" data-filter-name="blur">
+    <div class="Filter-lens"></div>
+    <div class="Filter-content">
+      <label class="Filter-name" for="blur">Blur</label>
+      <input type="range" id="blur" name="blur"
+         value="10" min="0" max="100" />
+    </div>
+  </div>
+  <div class="Filter" data-filter-name="brightness" hidden>
+    <div class="Filter-lens"></div>
+    <div class="Filter-content">
+      <label class="Filter-name" for="brightness">Brightness</label>
+      <input type="range" id="brightness" name="brightness"
+         value="60" min="0" max="200" />
+    </div>
+  </div>
+  <div class="Filter" data-filter-name="contrast" hidden>
+    <div class="Filter-lens"></div>
+    <div class="Filter-content">
+      <label class="Filter-name" for="contrast">Contrast</label>
+      <input type="range" id="contrast" name="contrast"
+         value="60" min="0" max="200" />
+    </div>
+  </div>
+  <div class="Filter" data-filter-name="grayscale" hidden>
+    <div class="Filter-lens"></div>
+    <div class="Filter-content">
+      <label class="Filter-name" for="grayscale">Grayscale</label>
+      <input type="range" id="grayscale" name="grayscale"
+         value="30" min="0" max="100" />
+    </div>
+  </div>
+  <div class="Filter" data-filter-name="hue-rotate" hidden>
+    <div class="Filter-lens"></div>
+    <div class="Filter-content">
+      <label class="Filter-name" for="hue-rotate">Hue-rotate</label>
+      <input type="range" id="hue-rotate" name="hue-rotate"
+         value="30" min="0" max="360" />
+    </div>
+  </div>
+  <div class="Filter" data-filter-name="saturate" hidden>
+    <div class="Filter-lens"></div>
+    <div class="Filter-content">
+      <label class="Filter-name" for="saturate">Saturate</label>
+      <input type="range" id="saturate" name="saturate"
+         value="30" min="0" max="100" />
+    </div>
+  </div>
+  <div class="Filter" data-filter-name="invert" hidden>
+    <div class="Filter-lens"></div>
+    <div class="Filter-content">
+      <label class="Filter-name" for="invert">Invert</label>
+      <input type="range" id="invert" name="invert"
+         value="100" min="0" max="100" />
+    </div>
+  </div>
+</div>
+</main>

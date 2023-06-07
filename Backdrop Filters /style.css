@@ -1,0 +1,140 @@
+:root {
+    --filter-blur: 10px;
+    --filter-brightness: 60%;
+    --filter-contrast: 60%;
+    --filter-grayscale: 30%;
+    --filter-hue-rotate: 30%;
+    --filter-saturate: 30%;
+    --filter-invert: 100%;
+  }
+  
+  .Filter[data-filter-name="blur"] .Filter-lens {
+    backdrop-filter: blur(var(--filter-blur));
+  }
+  
+  .Filter[data-filter-name="brightness"] .Filter-lens {
+    backdrop-filter: brightness(var(--filter-brightness));
+  }
+  
+  .Filter[data-filter-name="contrast"] .Filter-lens {
+    backdrop-filter: contrast(var(--filter-contrast));
+  }
+  
+  .Filter[data-filter-name="grayscale"] .Filter-lens {
+    backdrop-filter: grayscale(var(--filter-grayscale));
+  }
+  
+  .Filter[data-filter-name="hue-rotate"] .Filter-lens {
+    backdrop-filter: hue-rotate(var(--filter-hue-rotate));
+  }
+  
+  .Filter[data-filter-name="saturate"] .Filter-lens {
+    backdrop-filter: saturate(var(--filter-saturate));
+  }
+  
+  .Filter[data-filter-name="invert"] .Filter-lens {
+    backdrop-filter: invert(var(--filter-invert));
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image: url('https://cdn.pixabay.com/photo/2022/03/16/19/52/bird-7073243_1280.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .Header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 12px 24px;
+    border-bottom: 1px solid #fff;
+    font-weight: 700;
+    color: #fff;
+    backdrop-filter: blur(10px) brightness(60%);
+  }
+  
+  .Container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .Filter {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 5px solid #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%);
+    user-select: none;
+  }
+  
+  .Filter[hidden] {
+    display: none;
+  }
+  
+  .Filter-lens {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+  }
+  
+  .Filter-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 300px;
+    height: 70px;
+    padding: 12px 24px;
+    background: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .Filter-name {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    border-radius: 5px;
+    padding: 2px 8px;
+    background: linear-gradient(-25deg, #4affd3, #4a00d3);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    transform: translateY(-50%);
+  }
+  
+  .Filter input {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+  
+  .Me {
+    position: fixed;
+    z-index: 10;
+    bottom: 20px;
+    left: 50%;
+    color: #000;
+    transform: translateX(-50%);
+    font-weight: 700;
+    opacity: .5;
+  } 
