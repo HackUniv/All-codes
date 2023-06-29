@@ -1,0 +1,184 @@
+@import url("https://cdn.skypack.dev/splitting/dist/splitting.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+:root {
+  --interval: 0.65s;
+  --duration: calc(var(--interval) * 4);
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #131c28;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.ball {
+  --size: 10vmin;
+  height: var(--size);
+  width: var(--size);
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - var(--size) / 2);
+  display: none;
+  animation: bounce var(--interval) calc(var(--interval) / -2) cubic-bezier(0, 0, 0, 1) infinite, color var(--duration) calc(var(--interval) / -2) linear infinite;
+}
+.ball, .ball *, .ball:before, .ball *:before {
+  will-change: transform;
+}
+.ball.splitting {
+  display: block;
+}
+
+@keyframes bounce {
+  from, to {
+    transform: translateY(-300%);
+    animation-timing-function: cubic-bezier(0, 0, 1, 0), linear;
+  }
+  50% {
+    transform: none;
+  }
+}
+@keyframes color {
+  from, to {
+    --color: #2358e6;
+  }
+  25% {
+    --color: #e58d2c;
+  }
+  50% {
+    --color: #27c05f;
+  }
+  75% {
+    --color: #df4b20;
+  }
+}
+
+.ball:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color);
+  border-radius: 50%;
+}
+.ball-top {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.ball-top:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: calc(var(--size) / 2);
+  border-top-right-radius: calc(var(--size) / 2);
+  background-color: var(--color);
+  animation: anti-bounce var(--interval) calc(var(--interval) / -2) cubic-bezier(0, 0, 0, 1) infinite;
+}
+@keyframes anti-bounce {
+  from, to {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 1, 0);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+}
+.phrase {
+  font-size: 10vmin;
+  text-align: center;
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-areas: "layer";
+  opacity: 0;
+}
+.phrase.splitting {
+  opacity: 1;
+}
+.phrase .word {
+  --delay: calc(var(--interval) * (var(--item-index)));
+  display: block;
+  grid-area: layer;
+  --transform: translateX(0);
+}
+.phrase .word.splitting {
+  animation: word-reveal var(--duration) linear both infinite, word-bounce var(--duration) ease both infinite;
+  animation-delay: var(--delay);
+}
+@keyframes word-reveal {
+  0%, 25%, 100% {
+    visibility: hidden;
+  }
+  1%, 24% {
+    visibility: visible;
+  }
+}
+@keyframes word-bounce {
+  from, 30%, to {
+    transform: var(--transform);
+  }
+  12.5% {
+    transform: translateY(30%) var(--transform);
+  }
+}
+.phrase .word.slide .char {
+  animation: char-reveal var(--interval) cubic-bezier(0, 0, 0.2, 1) both infinite;
+  animation-delay: var(--delay);
+}
+@keyframes char-reveal {
+  0% {
+    transform: translateX(calc(-0.5em * var(--distance-sine)));
+  }
+  100% {
+    transform: translateX(calc(0.25em * var(--distance-sine))) translateY(50%);
+  }
+}
+.phrase .word.smiley {
+  --transform: rotate(90deg);
+}
+.phrase .word.smiley [data-char] {
+  animation: none var(--interval) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+.phrase .word.smiley [data-char=":"] {
+  top: -0.06em;
+  animation-name: blink;
+}
+@keyframes blink {
+  0%, 60% {
+    transform: scaleX(1);
+  }
+  30% {
+    transform: scaleX(0);
+  }
+}
+.phrase .word.smiley [data-char=")"] {
+  animation-name: smile;
+  animation-timing-function: ease-out;
+}
+@keyframes smile {
+  0% {
+    transform: scale(0.7);
+  }
+  60% {
+    transform: scale(1);
+  }
+}
