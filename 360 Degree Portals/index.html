@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+    <link rel="stylesheet" href="./style.css">
+  <style>
+     body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+       overflow:hidden;
+       background:black;
+    }
+
+    #container {
+      z-index:10;
+      position: fixed;
+      margin-top: 10%;
+      left: 45%;
+      width: 10vw;
+      height: 20vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform:scale(.2) scaley(.9) rotateZ(0deg);
+        -webkit-animation: intro 1;
+  animation-duration:4s;
+     
+    }
+    
+    #container > canvas {
+
+      filter: blur(0px) brightness(200%);
+  transform: scale(1.3);
+  transition: filter 1s, transform 0s;
+      box-shadow: 1px 1px 100px 0px white;
+            -webkit-animation: intro2 1;
+      animation-duration:4s;
+
+}
+    
+  
+
+
+    
+#container:hover > canvas {
+  filter: blur(0px);
+  transform: scale(.7);
+  box-shadow: 1px 1px 200px 800px black;
+}
+ 
+#container:hover
+    { position: fixed;
+      z-index:100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform:scale(1) rotateZ(0deg);
+      margin-top: 1%;
+    }
+   
+    
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <div id="container2"></div>
+  <div id="container3"></div>
+  <div id="container4"></div>
+  <div id="container5"></div>
+  <div id="container6"></div>
+
+
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js'></script>
+<script src='https://unpkg.com/three@0.125.2/examples/js/controls/OrbitControls.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js'></script>
+  <script> src="./script.js"></script>
+<script src='https://unpkg.com/three@0.125.2/examples/js/loaders/GLTFLoader.js'></script><script  src="./script.js"></script>
+
+ 
+</body>
+</html>
