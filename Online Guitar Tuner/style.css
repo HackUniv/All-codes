@@ -1,0 +1,325 @@
+:root {
+    --dark: #282828;
+    --black: #0a180b;
+    --c-mouth: #7c1d1c;
+    --track: #2220;
+    --thumb: #4caf50;
+    --c-classic: #ff9800;
+    --c-electric: #00aaff;
+  }
+  
+  html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    perspective: 100vmin;
+    font-family: Arial, Helvetica, serif;
+    --vol: 0.05;
+  }
+  
+  body * { 
+    box-sizing: border-box; 
+  }
+  
+  
+  
+  /*** HEADER ***/
+  header {
+    padding: 10px;
+    background: var(--dark);
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    box-shadow: #00000030 0px 2px 6px, #00000040 0px 2px 6px;
+  }
+  
+  /*** Title ***/
+  h1 {
+    display: inline-block;
+    font-weight: normal;
+    color: #ffffff;
+    font-size: 30px;
+    margin: 0px 0px 0 60px;
+    padding: 0px 20px 0 0;
+    border-right: 1px solid #000;
+    float: left;
+    position: relative;
+    background: linear-gradient(90deg, #fff0 calc(100% - 1px), #fff2 100%);
+    height: 40px;
+  }
+  
+  h1:before {
+    content: "";
+    float: left;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(-42deg, #686868 , #e6e6e6, #686868);
+    margin-right: 10px;
+    position: absolute;
+    z-index: -1;
+    left: -60px;
+    transform: rotate(-45deg) scale(0.85);
+    border-radius: 35% 66% 40% 15% / 40% 66% 35% 15%;
+    margin-top: -11px;
+    padding: 2px;
+    background-color: #151515;
+    box-shadow: #00000026 0 0 5px 3px, 0 0 2px 0px #000, 0 0 15px 5px #1118 inset, 0 0 4px 3px #fff inset;
+    cursor: pointer;
+    border: 2px solid #111111;
+    border-color: #222 #222121 #222222 #1e1e1e;
+    box-sizing: initial;
+  }
+  
+  h1:after {
+    content: "";
+    width: 40px;
+    height: 30px;
+    border-radius: 100%;
+    background: repeating-linear-gradient(60deg, #fff0 0 1px , #6668 0 2px, #fff0 0 3px), repeating-linear-gradient(-60deg, #fff0 0 1px , #6668 0 2px, #fff0 0 3px);
+    position: absolute;
+    left: -53px;
+    top: 0px;
+    cursor: pointer;
+  }
+  
+  h1 a {
+    color: #fff;
+  }
+  
+  h1:hover a, h1:hover a span, h1 a.imgTitle {
+    color: #00b8ff;
+    text-shadow: 0 0 3px #00b8ff, 0 0 4px #00b8ff, 0 0 5px #00b8ff;
+  }
+  
+  h1 a.imgTitle span:nth-child(even) { 
+    color: #83dcff; 
+    text-shadow: 0 0 2px #00b8ff, 0 0 3px #00b8ff, 0 0 4px #00b8ff
+  }
+  
+  
+  h1 span {
+    float: left;
+    text-transform: uppercase;
+    position: relative;
+  }
+  h1 span:nth-child(1) {
+    font-size: 1.5em;
+    line-height: 0.725em;
+    transform: scaleY(1.2);
+    top: 5px;
+  }
+  h1 span:nth-child(2) {
+    font-size: 15px;
+    position: absolute;
+    left: 50px;
+    margin-top: -3px;
+    color: #ccc;
+    transform: scaleX(1.75);
+  }
+  h1 span:nth-child(3) {
+    margin-left: -1px;
+    margin-top: -2px;
+    font-size: 1.05em;
+    top: 11px;
+    transform: scaleY(1.2);
+  }
+  h1 span:nth-child(4) {
+    font-size: 12px;
+    margin-left: 8px;
+    top: 12px;
+    color: #999;
+    transform: scaleX(1.5);
+  }
+  h1 span:nth-child(5) {
+    font-size: 19px;
+    font-weight: bold;
+    top: 23px;
+    left: -42px;
+  }
+  h1 span:nth-child(6) {
+    margin-left: -37px;
+    font-size: 11px;
+    margin-top: 24px;
+    color: #ccc;
+    transform: scaleX(1.2);
+  }
+  
+  
+  /*** Link ***/
+  a.josetxu-btn {
+    background: url(https://josetxu.com/wp-content/themes/josetxu-code/images/profile.jpg) no-repeat center center #ffffff;
+    background-size: calc(36px);
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    margin-left: 20px;
+    text-align: left;
+    filter: grayscale(1);
+    position: relative;
+  }
+  
+  a.josetxu-btn:before, a.josetxu-btn:after {
+    content: "CREATED BY";
+    font-size: 8px;
+    color: #b9b9b9;
+    background: linear-gradient(90deg, #fff0 calc(100% - 1px), #fff2 100%);
+    min-width: 68px;
+    border-radius: 0;
+    margin-left: 40px;
+    float: left;
+    padding: 7px 0 3px 6px;
+    border-right: 1px solid #000;
+  }
+  
+  a.josetxu-btn:after {
+    content: "JOSETXU";
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 0 7px 5px;
+    min-width: 69px;
+  }
+  
+  a.josetxu-btn:hover {
+    background-image: url(https://assets.codepen.io/256997/internal/avatars/users/default.png?width=40);
+    filter: none;
+  }
+  
+  a.josetxu-btn:hover:before {
+    color: #ff6600;
+  }
+  
+  a.josetxu-btn:hover:after {
+    color: #ff6600;
+  }
+  
+  
+  
+  /*** Buttons ***/
+  header button { 
+    float: right;
+    height: 40px;
+    cursor: pointer;
+    width: 45px;
+    margin: 0 10px;
+    border: 0;
+    background: #fff0;
+    position: relative;
+    border-radius: 1px;
+    transition: all 0.25s ease 0s;
+  }
+  
+  header button:disabled { 
+    cursor: default; 
+    box-shadow: 0 0 0 4px var(--dark), 0 0 0 7px var(--c-classic);
+  }
+  
+  header button:disabled:before { 
+    cursor: default; 
+    opacity: 1;
+  }
+  
+  header button:disabled:hover:before { 
+    opacity: 1;
+  }
+  
+  header button + button:disabled { 
+    box-shadow: 0 0 0 4px var(--dark), 0 0 0 7px var(--c-electric);
+  }
+  
+  
+  header button:before {
+    opacity: 0.5;
+  }
+  
+  header button:hover:before {
+    opacity: 0.9;
+  }
+  
+  header button:after {
+    content: "ELECTRIC";
+    position: absolute;
+    color: #0008;
+    font-size: 10px;
+    top: 53px;
+    left: -8px;
+    padding: 0 5px;
+    border-radius: 2px;
+    max-height: 0;
+    height: 100%;
+    font-weight: bold;
+    transition: all 0.25s ease 0s;
+    z-index: -1;
+    overflow: hidden;
+    transform-origin: center top;
+    width: 50px;
+    text-shadow: 0px 1px 2px #fffc, 0px 0px 1px #000;
+    background: var(--c-electric);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  header button#e-classic:after {
+    content: "CLASSIC";
+    background: var(--c-classic);
+  }
+  
+  header button:hover:after {
+    max-height: 21px;
+  }
+  
+  
+  button#e-classic:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+      radial-gradient(circle at 50% 5px, var(--dark) 6px, var(--c-classic) 7px 9px, var(--dark) 10px, #fff0 11px ),
+      radial-gradient(ellipse at 50% -25px, var(--c-classic) 19px, #fff0 20px ), 
+      radial-gradient(ellipse at 50% 55px, var(--c-classic) 23px, #fff0 24px ), 
+      radial-gradient(circle at 50% 31px, var(--c-classic) 22px, #fff0 23px ), 
+      var(--dark);
+    border-radius: 7px 7px 12px 12px;
+  }
+  
+  button#e-electric:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+      conic-gradient(from 0deg at 0 100%, var(--dark) 0 25%, #fff0 0 100%), 
+      conic-gradient(from 0deg at 0 100%, var(--dark) 0 25%, #fff0 0 100%), 
+      conic-gradient(from 0deg at 0 100%, var(--c-electric) 0 25%, #fff0 0 100%), 
+      radial-gradient(circle at 50% -4px, var(--dark) 9px, #fff0 10px ), 
+      radial-gradient(ellipse at 32px 0px, var(--dark) 6px, #fff0 7px ), 
+      radial-gradient(ellipse at 13px 0px, var(--dark) 6px, #fff0 7px ), 
+      radial-gradient(ellipse at 50% -6px, var(--c-electric) 19px, #fff0 20px ), 
+      radial-gradient(ellipse at 50% 55px, var(--c-electric) 23px, #fff0 24px ), 
+      radial-gradient(circle at 50% 31px, var(--c-electric) 22px, #fff0 23px ), 
+      var(--dark);
+    border-radius: 7px 7px 15px 15px;
+    background-repeat: no-repeat;
+    background-size: 11px 4px, 11px 4px, 7px 15px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    background-position: 17px 22px, 17px 16px, 19px -2px, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  

@@ -1,0 +1,65 @@
+
+
+<header>
+    <h1>
+      <a target="_top" href="https://codepen.io/josetxu/full/jOQegyB" id="tuner-title">
+        <span>O</span><span>nline</span>
+        <span>G</span><span>uitar</span>
+        <span>T</span><span>uner</span>
+      </a>
+    </h1>
+    <a class="josetxu-btn" href="https://josetxu.com" target="_blank"></a>
+    <button id="e-classic"  class="change-guitar" onclick="changeGuitar(this.id)"></button>
+    <button id="e-electric" class="change-guitar active" onclick="changeGuitar(this.id)" disabled></button>
+  </header>
+  
+  <section>
+    <div class="tuner-body e-electric" id="guitar-body">
+      <button onmouseover="pickString(this.id)" onclick="clickString(this.id)" class="string" id="s6"><span></span></button>
+      <button onmouseover="pickString(this.id)" onclick="clickString(this.id)" class="string" id="s5"><span></span></button>
+      <button onmouseover="pickString(this.id)" onclick="clickString(this.id)" class="string" id="s4"><span></span></button>
+      <button onmouseover="pickString(this.id)" onclick="clickString(this.id)" class="string" id="s3"><span></span></button>
+      <button onmouseover="pickString(this.id)" onclick="clickString(this.id)" class="string" id="s2"><span></span></button>
+      <button onmouseover="pickString(this.id)" onclick="clickString(this.id)" class="string" id="s1"><span></span></button>
+      <div class="notes">
+        <span class="" id="s6Note">E</span>
+        <span class="" id="s5Note">A</span>
+        <span class="" id="s4Note">D</span>
+        <span class="" id="s3Note">G</span>
+        <span class="" id="s2Note">B</span>
+        <span class="" id="s1Note">E</span>
+      </div>
+      <div class="notes">
+        <span class="" id="s6Nota">MI</span>
+        <span class="" id="s5Nota">LA</span>
+        <span class="" id="s4Nota">RE</span>
+        <span class="" id="s3Nota">SOL</span>
+        <span class="" id="s2Nota">SI</span>
+        <span class="" id="s1Nota">MI</span>
+      </div>
+      <div id="move-pick"></div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="slider">
+      <input id="volume" type="range" min="0" max="1" value="0.5" step="0.1" oninput="setVolume(this.value)" onchange="setVolume(this.value)" autocomplete="off">
+      <div class="slider-value">5</div>   
+    </div>
+    <div class="buttons">
+      <button onfocus="stopStrings()" class="" id="btnStop"></button>
+      <button onclick="holdSound()" class="" id="btnHold"></button>
+    </div>
+    <div class="pick">
+      <button onclick="usePick()" class="" id="btnPick"></button>
+    </div>
+  </footer>
+  
+  <audio id="as1" src="https://cdn.josetxu.com/audio/egs-1.mp3"></audio>
+  <audio id="as2" src="https://cdn.josetxu.com/audio/egs-2.mp3"></audio>
+  <audio id="as3" src="https://cdn.josetxu.com/audio/egs-3.mp3"></audio>
+  <audio id="as4" src="https://cdn.josetxu.com/audio/egs-4.mp3"></audio>
+  <audio id="as5" src="https://cdn.josetxu.com/audio/egs-5.mp3"></audio>
+  <audio id="as6" src="https://cdn.josetxu.com/audio/egs-6.mp3"></audio>
+  
+  
