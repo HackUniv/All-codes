@@ -1,0 +1,256 @@
+@import "compass";
+@import url('https://fonts.googleapis.com/css?family=BenchNine:300,400');
+
+*, *:after, *:before{
+  @include box-sizing(border-box);
+}
+html{
+  background: #222;
+  overflow: hidden;
+font-family: 'BenchNine', sans-serif;
+}
+
+@mixin circle($s){
+  width: $s;
+  height: $s;
+  @include border-radius(50%);
+}
+@mixin center($z){
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: $z;
+}
+
+
+
+.clock-container{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  @include translate(-50% , -50%);
+  @include circle(480px);
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 0 25px 3px #000 , 0 0 10px rgba(0,0,0,0.8) inset;
+  .spear{
+    position: absolute;
+    width: 220px;
+    height: 1px;
+    background: red;
+    left: 50%;
+    top: 50%;
+    @include translateY(-50%);
+    z-index: 200;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.4);
+      
+    &:after{
+      content: '';
+      position: absolute;
+      border:7px solid transparent;
+      border-right-color: red;
+      right: 0;
+      top: -7px;
+    }
+     &:before{
+      content: '';
+      position: absolute;
+      border:7px solid transparent;
+      border-left-color: red;
+      left: 2px;
+      top: -7px;
+    }
+    
+  }
+  .clock-analog{
+    @include circle(440px);
+    margin: 20px;
+    background: #fff;
+    z-index: 5;
+    position: relative;
+     box-shadow: 0 0 25px 3px #000 inset;
+    .second , .minute , .hour {
+      width: 20px;
+      height: 20px;
+      @include center(100);
+      transition: 0.2s 0.2s ease-in;
+      @include rotate(90deg);
+      span{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        transform-origin: 50%;
+        z-index: 5;
+        
+        &:after{
+          content: '';
+          width: 4px;
+          height: 1px;
+          background: #000;
+          position: absolute;
+          left: 130%;
+          top: -10%;
+          opacity: 0.3;
+        }
+        
+        &:nth-child(5n + 2):after{
+          width: 7px;
+          opacity: 1;
+          left: 110%;
+        }
+        
+      }
+    }
+      
+    .hour{
+       z-index: 150;
+      font-size: 32px;
+      font-weight: 400;
+      span{
+        &:after{   
+        opacity: 1;
+        width: 4px;
+        height: 1px;
+        color: #666;
+        @include translate(5px , 12px); 
+      
+      }
+      }
+      
+      &:after{
+        content: '';
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include translate(-50% , -50%);
+        @include circle(250px);
+        box-shadow: 0 0 15px 2px rgba(0,0,0,.6) inset;
+      }
+    }
+    .minute{
+      color: #fff;
+      font-size: 16px;
+      span:after{ 
+        background: #fff; 
+        @include transform(translate(10px, -7px) rotate(-9deg));
+      }
+      &:after{
+        content: '';
+        background: #333;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include translate(-50% , -50%);
+        @include circle(350px);
+        box-shadow: 0 0 25px 2px #000 inset;
+      }
+    }
+    
+    .second{
+      font-size: 12px;
+      span:after{   @include translate(5px , -10px); }
+    }
+    
+    .dail{
+      width: 20px;
+      height: 20px;
+      @include center(100);
+      span{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        transform-origin: 50%;
+        text-indent: 1000px;
+        overflow: hidden;
+        position: absolute;
+        
+        &:after{
+          content: '';
+          position: absolute;
+          @include circle(4px);
+          background-color: rgb(125,126,125);
+          @include filter-gradient(#7d7e7d, #0e0e0e, horizontal);
+          @include background-image(linear-gradient(left, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%));
+          left: 50%;
+          top: 50%;
+          @include translate(-50% , -50%);
+        }
+        
+        &:nth-child(5n + 1):after{
+          width: 8px;
+        }
+        
+      }
+    }
+    
+    
+  }
+  
+  .clock-digital{
+    position: absolute;
+    z-index: 200;
+    height: 444px;
+    width: 224px;
+    background: #090909;
+    left: 18px;
+    top: 18px;
+    border-radius: 220px 0 0 220px;
+    box-shadow: 5px 0 15px #000;
+    
+    &:after{
+      content: '';
+      position: absolute;
+      border:15px solid #8e0a0a;
+      border-right: none;
+      height: 400px;
+      width: 200px;
+      border-radius: 220px 0 0 220px;
+      left: 25px;
+      top: 25px;
+    }
+    
+    .time{
+      background: #111;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      @include translateY(-50%);
+      color: #fff;
+      border-radius:50px;
+      font-size: 24px;
+      padding: 2px 20px;
+      box-shadow:0 0 15px #000 inset;
+    }
+    .day{
+      background: #111;
+      position: absolute;
+      right: 20px;
+      bottom: 100px;
+      color: #fff;
+      border-radius:20px;
+      box-shadow:0 0 15px #000 inset;
+      padding: 2px 20px;
+      font-size: 16px;
+    }
+    .date{
+      background: #111;
+      position: absolute;
+      right: 20px;
+      top: 100px;
+      color: #fff;
+      border-radius:20px;
+      font-size: 16px;
+      box-shadow:0 0 10px #000 inset;
+      padding: 2px 20px;
+    }
+  }
+  
+}
+  
+    
