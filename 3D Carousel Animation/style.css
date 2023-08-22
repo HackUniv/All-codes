@@ -43,7 +43,10 @@ body {
 .card {
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  padding:  1rem ;
+  display : flex;
+  flex-direction : column;
+  align-content : center;
   background-color: hsl(280deg, 40%, calc(100% - var(--abs-offset) * 50%));
   border-radius: 1rem;
   color: $color-gray;
