@@ -1,0 +1,39 @@
+<div class="model">
+    <div class="man card active">
+      <img src="https://res.cloudinary.com/djclvnzg1/image/upload/v1687882867/man_vqnnyq.png" alt="" class="base" id="man">
+      <div class="mask" id="shirt-target">
+        <div class="color-block" id="shirt-color-block"></div>
+      </div>
+      <div class="mask" id="pants-target">
+        <div class="color-block" id="pants-color-block"></div>
+      </div>
+    </div>
+    <div class="woman card">
+      <img src="https://res.cloudinary.com/djclvnzg1/image/upload/v1687882867/woman_jgkhmi.png" alt="" class="base" id="woman">
+      <div class="mask" id="blouse-target">
+        <div class="color-block" id="blouse-color-block"></div>
+      </div>
+      <div class="mask" id="skirt-target">
+        <div class="color-block" id="skirt-color-block"></div>
+      </div>
+    </div>
+    <div class="color-1" onclick="this.classList.toggle('active')">
+      +
+      <div class="option preset" data-color="rgb(255,255,255)"></div>
+      <div class="option preset" data-color="rgb(192 193 224)"></div>
+      <div class="option preset" data-color="rgb(163 163 163)"></div>
+      <div class="option picker"><input type="color" id="input-color-shirt" value="#c9c9c9"></div>
+    </div>
+    <div class="color-2" onclick="this.classList.toggle('active')">
+      +
+      <div class="option preset" data-color="rgb(255,255,255)"></div>
+      <div class="option preset" data-color="rgb(222 222 222)"></div>
+      <div class="option preset" data-color="rgb(224 214 197)"></div>
+      <div class="option picker"><input type="color" id="input-color-pants" value="#c9c9c9"></div>
+    </div>
+    <div class="gender">
+      <div class="man active">men</div>
+      <div class="woman">women</div>
+    </div>
+  </div>
+  
